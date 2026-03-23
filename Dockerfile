@@ -1,5 +1,5 @@
 # Use an official Node.js runtime as a parent image
-FROM node:20-slim
+FROM node:25
 
 # Set the working directory
 WORKDIR /usr/src/app
