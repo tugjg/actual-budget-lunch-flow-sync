@@ -1,12 +1,13 @@
-{
+const fs = require('fs');
+const config = {
   "lunchFlow": {
-    "apiKey": "NOT_FOUND_LUNCH_FLOW_API_KEY",
+    "apiKey": process.env.LUNCH_FLOW_API_KEY || 'NOT_FOUND_LUNCH_FLOW_API_KEY',
     "baseUrl": "https://lunchflow.app/api/v1"
   },
   "actualBudget": {
     "serverUrl": "https://bulky-bullfinch.pikapod.net",
     "budgetSyncId": "97ddf8f1-c0e8-46d3-a2a1-33615f636b49",
-    "password": "NOT_FOUND_ACTUAL_BUDGET_PW",
+    "password": process.env.ACTUAL_BUDGET_PW || 'NOT_FOUND_ACTUAL_BUDGET_PW',
     "encryptionPassword": "",
     "duplicateCheckingAcrossAccounts": true
   },
@@ -60,4 +61,6 @@
       "includePending": true
     }
   ]
-}
+};
+fs.writeFileSync('./config.json', JSON.stringify(config, null, 2));
+

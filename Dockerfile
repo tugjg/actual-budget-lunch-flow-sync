@@ -15,5 +15,6 @@ COPY . .
 # The actual entry point will depend on your specific use case.
 # For a persistent service, you might run a server script.
 # If you just need to execute a one-off task, consider a Cloud Run Job instead.
+CMD ["node", "generate-config.js"]
 CMD ["npx", "@lunchflow/actual-flow", "import"]
 
