@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@lunchflow/actual-flow": "^0.0.19"
+  }
+}
